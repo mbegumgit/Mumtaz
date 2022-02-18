@@ -1,0 +1,9 @@
+import pyttsx3
+# initialize Text-to-speech engine
+engine = pyttsx3.init()
+# convert this text to speech
+text = "Python is a great programming language"
+engine.say(text)
+# play the speech
+engine.runAndWait()
+say() method adds an utterance to speak to the event queue, while runAndWait() method runs the actual event loop until all commands queued up. So you can call multiple times the say() method and run a single runAndWait() method in the end, in order to hear the synthesis, try it out!

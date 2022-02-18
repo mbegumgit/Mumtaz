@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>{% block heading %}{% endblock %}</h1>
+
+        {% block body %}
+        <h1>Spell Bee Words</h1>
+<ul>
+{% for note in notes%}
+{% for data, chk in note.items() %}
+    <li>{{ data }}===>{% if chk  %}  correct{% else %} Incorrect{% endif %}</li>
+    <li>****</li>
+{% endfor %}
+{% endfor %}
+</ul>
+<form action="{{ url_for('test') }}" method="post">
+<label for="Level">Select the Difficulty Level of Bee Word: </label>
+<select name="level">
+  <option value="">--Make a choice--</option>
+  <option value="ONE">ONE</option>
+  <option value="TWO">TWO</option>
+  <option value="THREE">THREE</option>
+</select><button type="submit" name="submit_pick" value="submit_pick">Pick word</button>
+<p> </p>
+<input type="text" name="word" placeholder="Enter Bee_word spelling Here">
+<button type="submit" name="submit_check" value="submit_check">Check word</button>
+
+
+</form>
+
+
+
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "sqlite.logLevel": "DEBUG",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "sqlite.databaseExtensions": [
+        "db",
+        "db3",
+        "sdb",
+        "s3db",
+        "sqlite",
+        "sqlite3",
+        "c:\\Users\\User\\projects\\Datascience\\Spell_Bee_Project\\SpellBee.db"
+    ],
+    "jupyter.jupyterServerType": "local"
+}

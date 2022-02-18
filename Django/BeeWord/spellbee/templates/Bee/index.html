@@ -1,0 +1,15 @@
+{% extends 'Bee/base.html' %}
+
+{% block title %}BeeWord{% endblock%}
+
+{% block body %}
+    <h1>Spell Bee Word</h1>
+    <br />
+    <ul>
+    {% for beeword in Words %}
+      <li>{{ beeword.id }}: Level -{{ beeword.level}}</li>
+      <li>BeeWord -{{ beeword.word}}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock%}

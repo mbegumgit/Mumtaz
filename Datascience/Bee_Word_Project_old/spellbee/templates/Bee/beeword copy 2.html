@@ -1,0 +1,22 @@
+{% extends 'Bee/base.html' %}
+
+{% block title %}BeeWord{% endblock%}
+
+{% block body %}
+    <h2>Spell Bee Word </h2>
+    <ul>
+        <li>Difficulty Level : {{ spellbee.level }}</li>
+        <li>BeeWord : {{ spellbee.word }} </li>
+       
+    </ul>
+    <!-- <form action="{% url 'index' spellbee %}" method="post"></form> -->
+    <form action="{% url 'index' %}" method="post"></form>
+    <label for="Word">Bee Word Spell Check: </label>
+    <input type="text" name="word" placeholder="Enter Bee_word spelling Here">
+    <button type="submit" name="submit_check" value="submit_check">Check word</button>
+
+
+    </form>
+    <a href="{% url 'index' %}">Choose your Difficulty LEVEL</a>
+
+{% endblock%}

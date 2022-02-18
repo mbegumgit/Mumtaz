@@ -1,0 +1,20 @@
+{% extends 'Bee/base.html' %}
+
+{% block title %}BeeWord{% endblock%}
+
+{% block body %}
+    <h2>Bee Word  spelling check</h2>
+    <b>Difficulty level chosen: {{ spellbee.level }} </b>
+    <b> Word picked: {{ spellbee.word }} </b>
+    
+    <form action="{% url 'beeword' spellbee.id  %}" method="post">
+    {% csrf_token %}
+    <label for="Word">Bee Word Spell Check: </label>
+    <input type="text" name="word" placeholder="Enter Bee_word spelling Here">
+    <button type="submit" name="submit_check" value="submit_check">Check word</button>
+
+
+    </form>
+    <a href="{% url 'index' %}">Choose your Difficulty LEVEL</a>
+
+{% endblock%}
